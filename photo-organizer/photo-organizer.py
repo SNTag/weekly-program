@@ -2,39 +2,39 @@
 # File: photo manager
 # Author: SNTagore (agenttiny@gmail.com)
 # Date: 28/12/2019
-# Description: To manage my photo library.  Will sort photos by country into the appropiate category.  Tested on photos from 2017 onwards
-# Usage: Simply call this program FROM THE DIRECTORY WITH UNSORTED PHOTOS.  It will read the 'readme.md' file, generate the appropiate folders under ../photostorage-jpg (IF THEY AREN'T THERE ALREADY) and sort the photos in here into them (IF THEY AREN'T IN THERE ALREADY)
+# Description: To manage my photo library.  Will sort photos by country into the appropiate category.  Tested on photos from 2019 onwards
+# Usage: Simply call this program FROM THE DIRECTORY WITH UNSORTED PHOTOS.  It will read the 'config.csv' file, generate the appropiate folders under ./output/sorted (IF THEY AREN'T THERE ALREADY) and sort the photos in here into them (IF THEY AREN'T IN THERE ALREADY).  Keep note, it does not duplicate files but creates symlinks so as to reduce space consumption.
+
+
+# CSV file used to dictate this program need to have the following 1st line:
+# City, Year, file identifier, Beginning, Ending
+
+
+## modify the following line to set the output folder name
+#TODO: [C] Add a user prompt for the following line?
+userPath = "photostorage-sorted"
+
+
+#TODO: [C] make the system robust to unknown values in CSV file.
+#TODO: [C] make the system robust to files from multiple cameras (different naming conventions)
 
 
 import pandas as pd
 import os
 import subprocess
 
-# TODO: Add confirmation message for the directory to be run from.
-## Setting the dir for now
-# TODO: highlight the line below
-os.chdir("/media/iDropbox/Dropbox/photos/photography/processing-tools/input/test-data/")
 
 ## Will load & format data
-fileData = pd.read_csv('readme.csv', delimiter=', ', engine="python")
-fileData['Beginning'] = fileData['Beginning'].astype(int)  # can I use this as a security check for a properly configured readme?
+fileData = pd.read_csv('./config.csv', delimiter=', ', engine="python")
+#TODO: [C] can I use this as a security check for a properly configured config?
+fileData['Beginning'] = fileData['Beginning'].astype(int)
 fileData['Ending'] = fileData['Ending'].astype(int)
-## handles the directories
-## makes new dir named as described in the readme.csv
-# TODO: Confirm that wd is set to the directory it is run from when running from shell
+
+## sets up the paths
 pathOrig = os.getcwd()
-pathData = "/media/iDropbox/Dropbox/photos/photography/processing-tools/input/sorted/"
-for i in range(len(fileData["City"])):
-    strCity = fileData.iloc[i,0]
-    strCity = strCity.replace(" ","_")
-    strYear = fileData.iloc[i,1]
-    pathModif = pathData + '/' + strCity + strYear
-    if os.path.isdir(pathModif) == False:
-        os.makedirs(pathModif)
-
-
-#----------|sort pics|----------#
-# TODO
+pathData = pathOrig+'/'+userPath+'/'
+if os.path.isdir(pathData) == False:
+    os.makedirs(pathData)
 
 for i in range(len(fileData["City"])):
     dataNomen = fileData.iloc[i, 2]
@@ -43,11 +43,20 @@ for i in range(len(fileData["City"])):
     dataEnd = int(fileData.iloc[i, 4])
     strCity = fileData.loc[i,"City"]
     strCity = strCity.replace(" ","_")
-    x = str(dataStart + 1)
+    strYear = fileData.iloc[i,1]
+    fileName = strCity + '\['+ strYear + '\]'
+    fileNameFull = pathData + strCity + '['+ strYear + ']'
 
-    for d in range(dataStart, dataEnd):
-        if dataStart != ' NA':
-            dataStart = dataStart - 1
-            if dataEnd != ' NA':
-                subprocess.call(['ln','-s',pathOrig+dataNomen+x,pathData+dataNomen+x], shell = False)
-                x = str(int(x) + 1)
+    ## handles the directories
+    ## makes new dir named as described in the config.csv
+    if os.path.isdir(fileNameFull) == False:
+        os.makedirs(fileNameFull)
+
+    ## Sorts photos by making symlinks into the appropiate folder as described by config.csv
+    #TODO: [A] needs to remove all broken symlinks too!
+    #TODO: [C] This approach will most likely only work on linux.  Try to make it universal?
+    for d in range(dataStart, dataEnd+1):
+        something1 = pathOrig+'/input/'+dataNomen+str(d)+"*"
+        something2 = fileNameFull+'/'+dataNomen+str(d)+'.cr2'
+        bashString = str('ln -s ' + something1 + ' ' + something2)
+        subprocess.call(bashString, shell = True)

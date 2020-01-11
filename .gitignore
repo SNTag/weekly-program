@@ -1,1 +1,2 @@
-photo-organizer/input/test-data/readme.csv
+photo-organizer/input/*
+photo-organizer/output/*
