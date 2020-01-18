@@ -5,8 +5,8 @@ City, Year, file identifier, Beginning, Ending, Ignore
 * version history
 ** 1.0.0
 Functional.  Will do a simple symlink to the photos (regardless of file type) into a generated directory, sorting them as directed by a 'config.csv'
-** 1.0.1
-Rearranged the code into functions.  Working on adding a category to CSV to ignore certain photos.
+** 1.0.1 to 1.0.3
+Rearranged code to include classes.  Working on adding a category to CSV to ignore certain photos.
 * Future Modifications
 ** Better File Support
 *** Add recognition of RAW files, and do not symlink.  Instead, generate a list of the files that are RAW, and ask for conversion (or do the conversion if possible using RAWtherapee).

@@ -1,19 +1,22 @@
-# weekly-program: Y2020
+* weekly-program: Y2020
 
 Author: SNTag
 started on: 01-11th-2020
 
-## Description
+** Description
 
-A repository where I'll be adding programs as part of my new-years resolution: 1-2 programs a week in any language.  Preferably R, Python, or Bash.  This does not have to mean that at the end of the year, I'll have 52 programs.  It means that I will have worked on x programs, some getting notable revisions to make them better as I learn.
+A repository where I'll be adding programs as part of my non New-Years resolution: 1-2 programs a week in any language.  Preferably R, Python, or Bash.  This does not have to mean that at the end of the year, I'll have 52 programs.  It means that I will either write a basic program each week, or make some notable revisions as I learn.
 
-# Helper-Functions
+* Helper-Functions
 
 language: bash
 
 scripts that I'm using to help organize this yearly goal.
 
-# P1: photo-organizer
+** settings-requirements
+Will auto generate a list of pre-required packages for each program.  The pre-requisites will be put into the file 'requirements.txt'.
+
+* P1: photo-organizer
 
 language: python
 
@@ -21,12 +24,12 @@ I dump all of my photos into one folder.  Using my travelling/event notes on whe
 
 **WARNING:** Works only on linux for the time being.
 
-##  To Use:
+** To Use:
 
 1. Modify (in the script) the variable 'userPath' to the name of the desired output folder.  This folder has to be at path '../'.  If it does not exist, it will create one for you.
 2. Run from the directory with the unsorted photos.
 
-# P2: sudoku
+* P2: sudoku
 
 language: python
 
