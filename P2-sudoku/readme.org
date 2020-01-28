@@ -1,3 +1,0 @@
-* version history
-** 0.0.1
-Started playing around with prelim functions
