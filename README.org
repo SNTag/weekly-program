@@ -5,11 +5,11 @@ started on: 01-11th-2020
 
 ** Description
 
-A repository where I'll be adding programs as part of my non New-Years resolution: 1-2 programs a week in any language.  Preferably R, Python, or Bash.  This does not have to mean that at the end of the year, I'll have 52 programs.  It means that I will either write a basic program each week, or make some notable revisions as I learn.
+A repository where I'll be listing the programs written as part of my [[https://sntag.github.io/programming/goal/discipline/2020-01-19/new-years-resolution.html][non new-years resolution]]: 1 program a week in any language.  Preferably R, Python or Bash.  This does not have to mean that at the end of the year, I'll have 52 programs.  It means that I will either write a basic program each week, or make some notable revisions to pre-existing programs as I learn.
 
 * Helper-Functions
 
-language: bash
+Language: bash
 
 scripts that I'm using to help organize this yearly goal.
 
@@ -18,19 +18,47 @@ Will auto generate a list of pre-required packages for each program.  The pre-re
 
 * P1: photo-organizer
 
-language: python
+[[https://github.com/SNTag/photo-organizer][Photo-organizer repo]]
 
-I dump all of my photos into one folder.  Using my travelling/event notes on when we went where in the file 'config.csv' (which is in the same folder as the photos), folders will be generated in an output location named by the city, country, and year.  symlinks to the original photos will be made inside each folder, creating a low-effort photo-organizer.
+Language: python
 
-**WARNING:** Works only on linux for the time being.
+I dump all of my photos into one folder.  Using my travelling/event notes on when we went where in the file 'config.csv' (which is in the same folder as the photos), folders will be generated in an output location named by the city, country, and year.  Symlinks to the original photos will be made inside each folder, creating a low-effort photo-organizer.
+
+*WARNING:* Tested only on linux for the time being.
 
 ** To Use:
 
 1. Modify (in the script) the variable 'userPath' to the name of the desired output folder.  This folder has to be at path '../'.  If it does not exist, it will create one for you.
 2. Run from the directory with the unsorted photos.
 
-* P2: sudoku
+* P2: sudoku (Put on hold until I practice more with PyQt5)
 
-language: python
+[[https://github.com/SNTag/Sudoku][my PyQt5 Sudoku Attempt]]
+
+Language: python
 
 Working on learning pyqt5.  It will come in handy for a number of projects I plan to do downstream.  This program will display a sudoku grid and enable the user to solve it.  It is inspired by a similar project I saw on reddit.
+
+*NOTE* This is not entirely original work.  I looked, copied, and modified code from [[https://github.com/aaahexing/Sudoku/blob/master/Sudoku.py][aaahexing's sudoku]] and [[http://zetcode.com/gui/pyqt5/tetris/][Zetcode tutorial:Tetris in PyQt5]] for inspiration and understanding of whats possible.
+
+* P3: RaspPi Stock Bot
+
+[[https://github.com/SNTag/stock-bot][stock-bot link]]
+
+Language: Python
+
+A Stock Bot to keep me updated on my investments.  I am a lazy investor; once I make an investment, I don't check up on it often.  But for the stocks that I am taking a gamble on, or to just get an idea of market health, I would like an automated.  It functions through emails.
+
+*NOTE* As I need to give the script my email password, I will refrain from posting it here for now.
+
+* P4: RaspPi Calendar Bot
+
+[[https://github.com/SNTag/org-calendar-bot][calendar-bot link]]
+
+Language: Python
+
+A Calendar bot to keep me updated on my scheduled events.  I use org-mode agenda, and this bot will read my agenda.  When something is coming up, it will send me an email.
+
+*NOTE* As I need to give the script my email password, I will refrain from posting it here for now.
+
+* P5: Guide to my blogging system
