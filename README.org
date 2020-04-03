@@ -5,7 +5,11 @@ started on: 01-11th-2020
 
 ** Description
 
-A repository where I'll be listing the programs written as part of my [[https://sntag.github.io/programming/goal/discipline/2020-01-19/new-years-resolution.html][non new-years resolution]]: 1 program a week in any language.  Preferably R, Python or Bash.  This does not have to mean that at the end of the year, I'll have 52 programs.  It means that I will either write a basic program each week, or make some notable revisions to pre-existing programs as I learn.
+This is a repository where I'll be logging the scripts written as part of my [[https://sntag.github.io/programming/goal/discipline/2020-01-19/new-years-resolution.html][non new-years resolution]]: 1 script a week in any language. Preferably R, Python or Bash.  This does not have to mean that at the end of the year I'll have 52 scripts. It means that I will either write a basic script each week, or make some notable revisions to pre-existing scripts as I learn.
+
+This repository is to act like the log found in 100 Days of Code.  I will use this as a public log and personal motivation to keep coding at some point every week.
+
+I will not share all the scripts I write though, as some scripts are modified for my exact purpose, or just not worth sharing.  I'm often reinventing the wheel in an effort to learn how something works.
 
 * Helper-Functions
 
@@ -16,9 +20,14 @@ scripts that I'm using to help organize this yearly goal.
 ** settings-requirements
 Will auto generate a list of pre-required packages for each program.  The pre-requisites will be put into the file 'requirements.txt'.
 
-* P1: photo-organizer
+* Jan - photo-organizer (REMOVED)
 
-[[https://github.com/SNTag/photo-organizer][Photo-organizer repo]]
+** READ THIS
+SCRIPT REMOVED FROM GITHUB.
+
+It is not built well enough for general use. It has been replaced with photo-organizer-v2, which aims to sort photos in a much more thorough and effective manner. Does not require the odd CSV dependency that this program needs.
+
+** Description
 
 Language: python
 
@@ -31,7 +40,7 @@ I dump all of my photos into one folder.  Using my travelling/event notes on whe
 1. Modify (in the script) the variable 'userPath' to the name of the desired output folder.  This folder has to be at path '../'.  If it does not exist, it will create one for you.
 2. Run from the directory with the unsorted photos.
 
-* P2: sudoku (Put on hold until I practice more with PyQt5)
+* Jan - sudoku (Put on hold until I practice more with PyQt5)
 
 [[https://github.com/SNTag/Sudoku][my PyQt5 Sudoku Attempt]]
 
@@ -41,7 +50,7 @@ Working on learning pyqt5.  It will come in handy for a number of projects I pla
 
 *NOTE* This is not entirely original work.  I looked, copied, and modified code from [[https://github.com/aaahexing/Sudoku/blob/master/Sudoku.py][aaahexing's sudoku]] and [[http://zetcode.com/gui/pyqt5/tetris/][Zetcode tutorial:Tetris in PyQt5]] for inspiration and understanding of whats possible.
 
-* P3: RaspPi Stock Bot
+* Feb - RaspPi Stock Bot
 
 [[https://github.com/SNTag/stock-bot][stock-bot link]]
 
@@ -49,16 +58,48 @@ Language: Python
 
 A Stock Bot to keep me updated on my investments.  I am a lazy investor; once I make an investment, I don't check up on it often.  But for the stocks that I am taking a gamble on, or to just get an idea of market health, I would like an automated.  It functions through emails.
 
-*NOTE* As I need to give the script my email password, I will refrain from posting it here for now.
+* Feb - github profile analyzer (Put on hold, do not know how to find the right data)
 
-* P4: RaspPi Calendar Bot
+Language: Python, bash, R
 
-[[https://github.com/SNTag/org-calendar-bot][calendar-bot link]]
+A github profile analyzer. An attempt to play with data and cross language cooperation. A python script to organize everything, bash to collect the data, and R to clean it up and make it pretty.
+
+* Feb - RaspPi Calendar Bot
+
+*WILL NOT BE SHARED*
+This is a program unique to my scheduling. I'm using emacs, NAS services, syncthing, and termux. This script is an attempt to incorporate them all.
 
 Language: Python
 
-A Calendar bot to keep me updated on my scheduled events.  I use org-mode agenda, and this bot will read my agenda.  When something is coming up, it will send me an email.
+A Calendar bot to keep me updated on my scheduled events. I use org-mode agenda, and this bot will read my agenda. When something is coming up, it will send me an email.
 
-*NOTE* As I need to give the script my email password, I will refrain from posting it here for now.
+* March - Financial Data Analysis
 
-* P5: Guide to my blogging system
+*WILL NOT BE SHARED*
+
+Language: R, Python
+
+In an effort to learn data analysis, I have been messing around with R to process financial data. In the process, I've written up auto-data analysis scripts, my own personalized R package, and integration to the RaspPi Stock Bot that I wrote earlier. There are many aspects of these scripts/package that I am still working on and cannot imagine sharing it just yet. I will write a blog post(s) at some point in the future, once it is more settled.
+
+* March - multiomics processing
+
+*WILL NOT BE SHARED*
+
+Language: R, Python, Bash
+
+I'm a scientist by trade. I've been playing around with some processing. This is something very specific to the dataset, and not worth sharing.
+* March - system scripts
+
+*WILL NOT BE SHARED*
+
+Language: Bash, pi-bakery
+
+I'm streamlining my linux and raspberry pi setup, as it happens often that I make an error.
+
+* April - photo-organizer-v2
+
+Language: Python
+
+A rewritten, updated, and modified version of my photo-organizer. It's been modified to be more thorough (but lenient) in determining if a photo does not already exist in the output directory.  It does this through openCV.  If images passes a threshold, the photos are moved to an output directory with a new name.
+
+I wrote this as I realized by photo-organizing problems was a result of having numerous 'backups' across numerous drives. Until i adopted linux full-time, my file-management was terrible, and have adopted a minimal categorization.
