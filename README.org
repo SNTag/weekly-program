@@ -103,3 +103,17 @@ Language: Python
 A rewritten, updated, and modified version of my photo-organizer. It's been modified to be more thorough (but lenient) in determining if a photo does not already exist in the output directory.  It does this through openCV.  If images passes a threshold, the photos are moved to an output directory with a new name.
 
 I wrote this as I realized by photo-organizing problems was a result of having numerous 'backups' across numerous drives. Until i adopted linux full-time, my file-management was terrible, and have adopted a minimal categorization.
+
+* April/May - market processing
+
+language: R
+
+I've been developing my understanding of R-tidyquant for a while. I'm rewritting my python scripts to R, as it seems easier to get what I want done.
+
+Also developing an R package for scripts I plan to use for a while.
+
+* April/May - Coursera specialization
+
+language: R
+
+Figure it's time to get some certificates in programming. I'm completing a machine learning specialization on Coursera, I hope to finish it in about a month. I've been tearing through a stack of online books along the way.
